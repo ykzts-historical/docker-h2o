@@ -2,6 +2,7 @@
 # based on https://github.com/h2o/h2o/blob/v2.2.2/share/h2o/fetch-ocsp-response
 
 # Copyright (c) 2015 DeNA Co., Ltd., Kazuho Oku, Tatsuhiro Tsujikawa
+# Copyright (c) 2017 Yamagishi Kazutoshi
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to
