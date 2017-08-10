@@ -3,11 +3,11 @@ FROM alpine:3.6
 ARG H2O_VERSION=2.2.2
 ARG H2O_DOWNLOAD_SHA256=cf45780058566bd63d90ad0b52b1d15f8515519090753398b9bcf770162a0433
 
+COPY share/h2o/fetch-ocsp-response /tmp/
+
 RUN addgroup -S h2o \
 	&& adduser -D -G h2o -S -s /sbin/nologin h2o \
-	&& apk add --no-cache \
-		libressl \
-		perl \
+	&& apk add --no-cache libressl \
 	&& apk add --no-cache --virtual .build-deps \
 		bison \
 		build-base \
@@ -34,6 +34,7 @@ RUN addgroup -S h2o \
 	&& cd \
 	&& mkdir -p /etc/h2o \
 	&& mkdir -p /var/www/html \
+	&& mv /tmp/fetch-ocsp-response /usr/local/share/h2o/fetch-ocsp-response \
 	&& apk del .build-deps
 
 COPY h2o.conf /etc/h2o/
