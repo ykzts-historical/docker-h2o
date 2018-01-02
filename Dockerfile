@@ -3,8 +3,6 @@ FROM alpine:3.7
 ARG H2O_VERSION=2.2.3
 ARG H2O_DOWNLOAD_SHA256=d40401ca714d00ca5204e8d22148dbaa9cae3407e3b4b6b62bd208543901ea51
 
-COPY share/h2o/fetch-ocsp-response /tmp/
-
 RUN addgroup -S h2o \
 	&& adduser -D -G h2o -S -s /sbin/nologin h2o \
 	&& apk add --no-cache libressl perl \
