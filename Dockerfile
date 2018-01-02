@@ -1,7 +1,7 @@
 FROM alpine:3.7
 
-ARG H2O_VERSION=2.2.3
-ARG H2O_DOWNLOAD_SHA256=d40401ca714d00ca5204e8d22148dbaa9cae3407e3b4b6b62bd208543901ea51
+ARG H2O_VERSION=2.2.4
+ARG H2O_DOWNLOAD_SHA256=ebacf3b15f40958c950e18e79ad5a647f61e989c6dbfdeea858ce943ef5e3cd8
 
 RUN addgroup -S h2o \
 	&& adduser -D -G h2o -S -s /sbin/nologin h2o \
